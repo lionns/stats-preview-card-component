@@ -45,6 +45,7 @@ main {
 .card__container {
   background-color: var(--dark-desaturated-blue);
   min-width: 228px;
+  max-width: 1050px;
   border-radius: 0.8rem;
   overflow: hidden;
 }
@@ -119,4 +120,39 @@ footer {
 footer a {
   text-decoration: none;
   color: var(--soft-violet);
+}
+
+@media screen and (min-width: 960px) {
+  .card__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+  }
+
+  .card__container .card--image {
+    background-image: url("./images/image-header-desktop.jpg");
+    grid-column: 2 / 3;
+    grid-row: 1 /2;
+  }
+
+  .card__container .card__content {
+    text-align: left;
+    grid-column: 1 / 2;
+    grid-row: 1/2;
+    padding: 7rem;
+  }
+
+  .card__container .card__content .card--title {
+    padding-right: 5rem;
+  }
+
+  .card__container .card--stats__container {
+    display: flex;
+    margin-top: 6rem;
+  }
+
+  .card__container .card--stats__container .stat-container {
+    margin-top: 0;
+    margin-right: 3.2rem;
+  }
 }
