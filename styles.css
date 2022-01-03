@@ -23,14 +23,13 @@
 }
 
 html {
-  font-size: 62.5%;
   height: 100%;
 }
 
 body {
   min-height: 100%;
   font-family: var(--inter-font);
-  font-size: 1.5rem;
+  font-size: 0.93rem;
   background-color: var(--very-dark-blue);
   display: flex;
   flex-direction: column;
@@ -39,13 +38,13 @@ body {
 }
 
 main {
-  padding: 2.4rem;
+  padding: 1.5rem;
 }
 
 .card__container {
   background-color: var(--dark-desaturated-blue);
   min-width: 228px;
-  max-width: 1050px;
+  max-width: 450px;
   border-radius: 0.8rem;
   overflow: hidden;
 }
@@ -54,62 +53,54 @@ main {
   position: relative;
   display: block;
   width: 100%;
-  min-height: 25rem;
+  min-height: 250px;
   background-image: url("./images/image-header-mobile.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: var(--soft-violet);
+  background-blend-mode: multiply;
 }
 
-.card__container .card--image::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: hsla(279, 66%, 32%, 0.5);
-}
-
-.card__container .card__content {
-  padding: 3.2rem;
+.card__container .card--content {
+  padding: 2rem;
   text-align: center;
 }
 
-.card__container .card__content .card--title {
-  font-size: 2.8rem;
+.card__container .card--content h1 {
+  font-size: 1.6rem;
   color: var(--white);
 }
 
-.card__container .card__content .card--title .accent {
+.card__container .card--content h1 .accent {
   color: var(--soft-violet);
 }
 
-.card__container .card__content .card--paragraph {
+.card__container .card--content p {
   color: var(--slightly-transparent-white);
-  line-height: 2.4rem;
+  line-height: 1.6rem;
   margin: 1.6rem 0;
 }
 
-.card__container .card--stats__container {
-  margin-top: 3.2rem;
+.card__container .card--stats {
+  margin-top: 2.8rem;
+  list-style: none;
 }
 
-.card__container .card--stats__container .stat-container {
-  margin-top: 2rem;
-}
-
-.card__container .card--stats__container .stat-container .stat--title {
+.card__container .card--stats li {
   color: var(--white);
   font-weight: 700;
-  font-size: 2.4rem;
-  text-transform: uppercase;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
 }
 
-.card__container .card--stats__container .stat-container .stat--description {
-  display: inline-block;
+.card__container .card--stats li span {
+  display: block;
   font-family: var(--lexend-deca-font);
-  font-size: 1.2rem;
+  font-size: 0.7rem;
+  font-weight: 400;
   text-transform: uppercase;
-  padding-top: 0.8rem;
+  padding-top: 0.5rem;
   color: var(--slightly-transparent-white-stat);
   letter-spacing: 0.1rem;
 }
@@ -117,41 +108,45 @@ main {
 footer {
   color: var(--white);
 }
+
 footer a {
   text-decoration: none;
   color: var(--soft-violet);
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 1050px) {
   .card__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1280px;
   }
 
   .card__container .card--image {
+    width: 50%;
     background-image: url("./images/image-header-desktop.jpg");
-    grid-column: 2 / 3;
-    grid-row: 1 /2;
   }
 
-  .card__container .card__content {
+  .card__container .card--content {
+    width: 50%;
     text-align: left;
-    grid-column: 1 / 2;
-    grid-row: 1/2;
-    padding: 7rem;
+    padding: 4rem;
   }
 
-  .card__container .card__content .card--title {
-    padding-right: 5rem;
+  .card__container .card--content h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 
-  .card__container .card--stats__container {
+  .card__container .card--content p {
+    padding-right: 2rem;
+  }
+
+  .card__container .card--stats {
     display: flex;
     margin-top: 6rem;
   }
 
-  .card__container .card--stats__container .stat-container {
+  .card__container .card--stats li {
     margin-top: 0;
     margin-right: 3.2rem;
   }
